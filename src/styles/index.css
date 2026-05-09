@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Hover scale on tanks (keeps GPU-accelerated transform). */
+.tank-card {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  will-change: transform;
+}
+.tank-card:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.12);
+}
+
+/* Wave element is twice as wide as its viewport; the keyframe slides it 50%. */
+.tank-wave {
+  width: 200%;
+  transform-origin: left center;
+}
+
+/* Critical glow — drop-shadow filter so the SVG path itself glows. */
+.tank-glow-critical {
+  filter: drop-shadow(0 0 6px #c62828) drop-shadow(0 0 12px rgba(198, 40, 40, 0.45));
+}
+.tank-glow-active {
+  filter: drop-shadow(0 0 4px rgba(46, 125, 50, 0.6));
+}
+
+/* Tooltip primitive (single shared element rendered at body root). */
+.brewery-tooltip {
+  position: fixed;
+  pointer-events: none;
+  z-index: 50;
+  background: rgba(15, 23, 42, 0.94);
+  color: white;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  line-height: 1.45;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 120ms;
+  max-width: 300px;
+}
+.brewery-tooltip.visible {
+  opacity: 1;
+}
+.brewery-tooltip .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brewery-tooltip .label {
+  color: #cbd5e1;
+}
+
+/* Reduce motion respects user preference. */
+@media (prefers-reduced-motion: reduce) {
+  .tank-card,
+  .tank-wave,
+  .tank-glow-critical,
+  .tank-glow-active,
+  .animate-liquidWave,
+  .animate-glowPulse,
+  .animate-criticalBlink {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* High-contrast support — keep edges visible against very light/dark themes. */
+@media (prefers-contrast: more) {
+  .tank-card { border: 1px solid #334155 !important; }
+}
