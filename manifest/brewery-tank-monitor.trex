@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest manifest-version="0.1" xmlns="http://www.tableau.com/xml/extension_manifest">
+  <dashboard-extension id="com.disrupta.tableau.brewery-tank-monitor" extension-version="1.0.0">
+    <default-locale>en_US</default-locale>
+    <name resource-id="name"/>
+    <description>Brewery Tank Monitor — animated SVG fermentation tanks driven by a Tableau worksheet (TankName, Temperature, ABV, FillPercent, FermentationStage, BatchID, Status). Built with React + D3 + Tailwind.</description>
+    <author name="Disruptive Advantage" email="ankur.napa@disruptive-advantage.com" organization="Disruptive Advantage" website="https://www.disruptive-advantage.com"/>
+    <min-api-version>1.5</min-api-version>
+    <source-location>
+      <url>https://ankurnapa.github.io/brewery-tank-extension/index.html</url>
+    </source-location>
+    <icon>iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFhSURBVHhe7dC9SgNRFEXhVL6Nj+Oz2Ai2lunEykIRRCsVtLRLY6FgE7AJKgb8F62vnJEIGWbJcE2cK6wFuxgZJsevl6yxXv0P9pUwkDCQMJAwkDCQMJAwkDCQMJAwUDbM9t5h6m9sFb+4M6dsmPjR8eNb8Ys7cxIGEgYSBhIGEgYSBhIGEgYSBhIGEgYSBhIGEgYSBhIG+hXM0/NDen+9K3ZxXycw8ePp46rYxX3CNEwYmDAwYWCdwdwPT9PL5X6xi/s6gRkdrKTh8kKxi/uEaZgwMGFgwsCEgQkDEwYmDEwYmDAwYWDCwISBCQMTBiYMTBiYMDBhYMLAhIEJAysaZrC6mI7Wlr4Xz/V32iznO53B3JwfVz/+0052+tW7k8Vz/Z02y/lO3PfnMOubu1OHlrq4M6dsmLYNzi6mDo3nnGb1nbYJA80d5vp2XP0Tk8VzTrP6TtvmDvNfEwYSBhIG+gSu2CKIlYqUdAAAAABJRU5ErkJggg==</icon>
+    <permissions>
+      <permission>full data</permission>
+    </permissions>
+  </dashboard-extension>
+  <resources>
+    <resource id="name">
+      <text locale="en_US">Brewery Tank Monitor</text>
+    </resource>
+  </resources>
+</manifest>

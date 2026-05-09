@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <title>Brewery Tank Monitor</title>
+    <!--
+      Tableau injects the Extensions API library at runtime when the iframe is
+      loaded as an extension; we ALSO load it explicitly so a standalone preview
+      (e.g. GitHub Pages opened directly in a browser) doesn't blow up — the code
+      gracefully falls back to mock data when window.tableau is unavailable.
+    -->
+    <script src="https://tableau.github.io/extensions-api/lib/tableau.extensions.1.latest.min.js" defer></script>
+    <script type="module" crossorigin src="./assets/index-BPM_hoEl.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BZpAUYVJ.css">
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased">
+    <div id="root"></div>
+  </body>
+</html>
